@@ -20,5 +20,13 @@ class Todo {
     init() {
         self.name = ""
     }
+    static func getArchiveURL() -> URL {
+        let plistName = "friends"
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDirectory.appendingPathComponent(plistName).appendingPathExtension("plist")
+    }
+
     
 }
+
+
